@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    font-family: "Josefin Sans", serif;
+    color: var(--black);
+}
+
+:root{
+    --white: #FFFFFF;
+    --lavender: #DDEEFC;
+    --blue: #2364D2;
+    --black: #24292E;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--lavender);
+}
+
+ /* Header */
+.header{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 7px 15px 7px 15px;
+}
+
+.header a:has(h1){
+    text-decoration: none;
+}
+
+.header a h1{
+    transition: all 0.15s ease;
+}
+
+.header a:has(h1) h1:hover{
+    color: #3a3e43;
+}
+
+
+.header button{
+    background-color: var(--blue);
+    color: var(--white);
+    border: 2px solid var(--blue);
+    padding: 10px 20px 10px 20px;
+    border-radius: 3px;
+    transition: all 0.2s ease-in-out;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.header .login-btn{
+    margin-left: auto;
+    margin-right: 1em;
+}
+
+.header .login-btn button:hover{
+    background-color: var(--white);
+    color: var(--blue);
+}
+
+.header .register-btn button:hover{
+    background-color: #3974d7;
+}
+
+.header .login-btn button:active,
+.header .register-btn button:active{
+    transform: scale(0.95);
+}
