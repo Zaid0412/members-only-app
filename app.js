@@ -1,4 +1,5 @@
 const indexControllers = require('./controllers/indexControllers');
+const userControllers = require('./controllers/userControllers');
 const express = require('express')
 const path = require('node:path')
 require('dotenv').config()
@@ -12,6 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+
+app.get('/login',userControllers.login.get)
 
 app.get('/', indexControllers.home)
 
