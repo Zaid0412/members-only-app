@@ -25,4 +25,17 @@ module.exports.registerValidation =  [
             return true
         })
         .withMessage('Passwords did not match.')
-    ]
+]
+
+module.exports.postValidation = [
+    check('title')
+        .exists()
+        .withMessage(`Title ${isReqMsg}`)
+        .isLength({min:5, max: 45})
+        .withMessage(`Title ${lengthMsg}`),
+    check('content')
+        .exists()
+        .withMessage(`Content ${isReqMsg}`)
+        .isLength({min: 8, max: 60})
+        .withMessage(`Content should be between 8 and 60 characters`)
+]

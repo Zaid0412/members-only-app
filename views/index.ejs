@@ -19,8 +19,8 @@
                             <div class="post-fullname"> <%= post.fullname %></div>
                             <div class="post-username">@<%= post.username %> • <%= post.formattedDate %></div>
                         <% }else { %>
-                            <div class="post-fullname"> <%= post.fullname.replace(/[a-z0-9]/gi, '*') %></div>
-                            <div class="post-username">@<%= post.username.replace(/[a-z0-9]/gi, '*') %> • <%= post.formattedDate %></div>
+                            <div class="post-fullname"> <%= post.fullname.replace(/[^ ]/gi, '*') %></div>
+                            <div class="post-username">@<%= post.username.replace(/[^ ]/gi, '*') %> • <%= post.formattedDate %></div>
                         <% } %>
                         
                     </div>
