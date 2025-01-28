@@ -11,25 +11,7 @@
     <%- include ('partials/header') %>
     <div class="posts">
         <% posts.map(post => { %>
-            <div class="post">
-                <div class="post-heading">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></svg>
-                    <div class="post-name">
-                        <% if (user && (user.member == '1' || user.admin == '1')) {%>
-                            <div class="post-fullname"> <%= post.fullname %></div>
-                            <div class="post-username">@<%= post.username %> • <%= post.formattedDate %></div>
-                        <% }else { %>
-                            <div class="post-fullname"> <%= post.fullname.replace(/[^ ]/gi, '*') %></div>
-                            <div class="post-username">@<%= post.username.replace(/[^ ]/gi, '*') %> • <%= post.formattedDate %></div>
-                        <% } %>
-                        
-                    </div>
-                </div>
-                <div class="post-main">
-                    <h2 class="post-title"><%= post.title %></h2>
-                    <p class="post-content"><%= post.content %></p>
-                </div>
-            </div>
+            <%- include ('partials/post', { post }) %>
         <% }) %>
     </div>
   </div>
