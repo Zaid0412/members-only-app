@@ -442,6 +442,23 @@ body{
     letter-spacing: 0.5px;
 }
 
+.post a{
+    margin-left: auto;
+    align-self: flex-end;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.15s ease-in-out;
+    will-change: transform;
+}
+
+.post a:active{
+    transform: scale(0.925);
+}
+
+.post:hover a{
+    opacity: 1;
+}
+
 /* * */
 .post .post-main{
     display: flex;
