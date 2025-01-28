@@ -12,9 +12,9 @@ const indexControllers = {
                             formattedDate: moment(e.date).fromNow(),
                         }
                     });
-                    res.render('index', { posts: formattedPosts })
+                    res.render('index', { posts: formattedPosts, user: req.user || null})
                 }
-                res.render('index', { posts })
+                res.render('index', { posts: posts , user: req.user || null})
             })
         } catch (error) {
             next(error)

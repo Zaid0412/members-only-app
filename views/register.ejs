@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Register</title>
+</head>
+<body>
+    <%- include ('partials/header') %>
+    <form action="/register" method="POST" class="register-form">
+        <h1>Create an Account</h1>
+        <div class="fullname">
+            <label for="fullname">Fullname</label>
+            <input type="text" name="fullname" id="fullname" required minlength="5" maxlength="35">
+            <% if (errors) { %>
+                <% errors.map(err => { %>
+                    <% if (err.path == 'fullname'){ %>
+                        <p class="err-msg"><%= err.msg %></p>
+                    <% } %>
+                <% }) %>
+            <% }else { %>
+                <p class="err-msg" style="opacity: 0;">as</p>
+            <% } %>
+        </div>
+        <div class="username">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" required minlength="5" maxlength="35">
+            <% if (errors) { %>
+                <% errors.map(err => { %>
+                    <% if (err.path == 'username'){ %>
+                        <p class="err-msg"><%= err.msg %></p>
+                    <% } %>
+                <% }) %>
+            <% }else { %>
+                <p class="err-msg" style="opacity: 0;">as</p>
+            <% } %>
+        </div>
+        <div class="password">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required minlength="5" maxlength="35">
+            <% if (errors) { %>
+                <% errors.map(err => { %>
+                    <% if (err.path == 'password'){ %>
+                        <p class="err-msg"><%= err.msg %></p>
+                    <% } %>
+                <% }) %>
+            <% }else { %>
+                <p class="err-msg" style="opacity: 0;">as</p>
+            <% } %>
+        </div>
+        <div class="password">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" name="confirm-password" id="confirm-password" required minlength="5" maxlength="35">
+            <% if (errors) { %>
+                <% errors.map(err => { %>
+                    <% if (err.path == 'confirm-password'){ %>
+                        <p class="err-msg"><%= err.msg %></p>
+                    <% } %>
+                <% }) %>
+            <% }else { %>
+                <p class="err-msg" style="opacity: 0;">as</p>
+            <% } %>
+        </div>
+        <button>Register</button>
+        <p>Already have an account?<a href="/login"> Login</a></p>
+    </form>
+</body>
+</html>

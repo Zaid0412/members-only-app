@@ -9,6 +9,7 @@
     --white: #FFFFFF;
     --lavender: #DDEEFC;
     --blue: #2364D2;
+    --red: #FE0000;
     --black: #24292E;
 }
 
@@ -71,6 +72,82 @@ body{
     transform: scale(0.95);
 }
 
+/* From Uiverse.io by aadium */ 
+.paste-button {
+  position: relative;
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: auto;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: var(--lavender);
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.dropdown-content {
+  display: none;
+  opacity: 0;
+  font-size: 13px;
+  position: absolute;
+  z-index: 1;
+  min-width: 100%;
+  background-color: var(--lavender);
+  border: 2px solid var(--blue);
+  border-radius: 0px 15px 15px 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  color: var(--blue);
+  padding: 8px 10px;
+  text-decoration: none;
+  display: block;
+  transition: 0.1s;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--blue);
+  color: var(--lavender);
+}
+
+.dropdown-content a:focus {
+  background-color: var(--lavender);
+  color: var(--blue);
+}
+
+.dropdown-content #top:hover {
+  border-radius: 0px 13px 0px 0px;
+}
+
+.dropdown-content #bottom:hover {
+  border-radius: 0px 0px 13px 13px;
+}
+
+.paste-button:hover .dropdown-content {
+  display: block;
+  animation: fade 0.2s both;
+}
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+        filter: blur(2.5px);
+    }
+    100%{
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
 
  /* Login Form */
 .login-form{
@@ -78,12 +155,16 @@ body{
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
     width: 30vw;
     justify-self: center;
-    margin-top: 20vh;
+    margin-top: 12vh;
     display: flex;
     flex-direction: column;
     gap: 1.5em;
     padding: 20px;
     border-radius: 10px;
+}
+
+.login-form h1{
+    align-self: center;
 }
 
 .login-form div{
@@ -148,3 +229,231 @@ body{
     outline: none;
 }
 
+ /* Register Form */
+
+
+ /* Login Form */
+ .register-form{
+    background-color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    width: 30vw;
+    justify-self: center;
+    margin-top: -2vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.register-form h1{
+    align-self: center;
+}
+
+.register-form div{
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+}
+
+.register-form input{
+    border: 1px solid #ced6e0;
+    border-radius: 7px;
+    padding: 15px;
+    width: 93%;
+    transition: all .3s ease-in-out;
+}
+
+.register-form label{
+    font-size: 0.8em;
+}
+
+.register-form button{
+    background-color: var(--blue);
+    color: var(--white);
+    border: 2px solid var(--blue);
+    padding: 10px 20px 10px 20px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.register-form .err-msg{
+    margin: 0;
+    font-size: 0.75em;
+    color: var(--red);
+    /* text-align: start; */
+    align-self: flex-start;
+}
+
+.register-form p{
+    align-self: center;
+}
+
+.register-form p a{
+    color: var(--blue);
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+}
+
+.register-form p a:hover{
+    text-decoration: underline;
+}
+
+.register-form button:hover{
+    background-color: #3974d7;
+}
+
+.register-form button:active{
+    transform: scale(0.975);
+}
+
+.register-form input:hover{
+    border: 1px solid var(--blue);
+}
+
+.register-form input:focus{
+    border: 1px solid var(--blue);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    outline: none;
+}
+
+ /* Membership Form  */
+
+ .member-form{
+    background-color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    width: 30vw;
+    justify-self: center;
+    margin-top: 12vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.member-form h1{
+    align-self: center;
+}
+
+.member-form div{
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+}
+
+.member-form input{
+    border: 1px solid #ced6e0;
+    border-radius: 7px;
+    padding: 15px;
+    width: 93%;
+    transition: all .3s ease-in-out;
+}
+
+.member-form label{
+    font-size: 0.8em;
+}
+
+.member-form button{
+    background-color: var(--blue);
+    color: var(--white);
+    border: 2px solid var(--blue);
+    padding: 10px 20px 10px 20px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.member-form p{
+    align-self: center;
+}
+
+.member-form p a{
+    color: var(--blue);
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+}
+
+.member-form p a:hover{
+    text-decoration: underline;
+}
+
+.member-form button:hover{
+    background-color: #3974d7;
+}
+
+.member-form button:active{
+    transform: scale(0.975);
+}
+
+.member-form input:hover{
+    border: 1px solid var(--blue);
+}
+
+.member-form input:focus{
+    border: 1px solid var(--blue);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    outline: none;
+}
+
+ /* Posts  */
+
+.posts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.posts .post{
+    /* border: 1px solid var(--white); */
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 9px;
+    padding: 1em;
+    width: 40vw;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+}
+
+.post .post-heading{
+    display: flex;
+    gap: 0.6em;
+}
+
+.post svg{
+    margin-top: -0.25em;
+}
+
+.post .post-fullname{
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.post .post-username{
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+}
+
+/* * */
+.post .post-main{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2em;
+}
+
+.post .post-title{
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.post .post-content{
+    margin-top: 0;
+}
