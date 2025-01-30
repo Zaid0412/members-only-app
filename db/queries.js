@@ -8,7 +8,18 @@ const queries = {
     },
 
     getAllPosts: async () => {
-        const { rows } = await pool.query('SELECT * FROM posts g JOIN users c ON g.user_id = c.id;');
+        const { rows } = await pool.query(`
+        SELECT 
+        g.id, 
+        g.title, 
+        g.content, 
+        g.date, 
+        c.id AS user_id, 
+        c.fullname, 
+        c.username
+        FROM posts g
+        JOIN users c ON g.user_id = c.id`);
+        console.log(rows)
         return rows
     },
 
@@ -16,6 +27,10 @@ const queries = {
         queries.getMaxPostId().then(async maxId => {
             await pool.query(`INSERT INTO posts (id, title, content, user_id) VALUES ($1, $2, $3, $4)`, [maxId.max + 1, title, content, user_id])
         })
+    },
+
+    deletePost: async (id) => {
+        await pool.query(`DELETE FROM posts WHERE id = $1`, [id])
     },
 
     // Users Queries

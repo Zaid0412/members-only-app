@@ -20,6 +20,16 @@ const postsController = {
                 next(error)
             }
         }
+    },
+    
+    delete:async (req, res, next) => {
+        try {
+            await db.deletePost(req.params.id)
+            console.log(req.params.id)
+            res.redirect('/')
+        } catch (error) {
+            next(error)
+        }
     }
 }
 

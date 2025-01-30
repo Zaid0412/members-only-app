@@ -10,7 +10,7 @@
   <div class="app">
     <%- include ('partials/header') %>
     <div class="posts">
-        <% posts.map(post => { %>
+        <% posts && posts.map(post => { %>
             <%- include ('partials/post', { post }) %>
         <% }) %>
     </div>

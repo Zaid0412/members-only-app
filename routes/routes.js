@@ -20,5 +20,6 @@ router.get('/register', userControllers.register.get)
 router.get('/join', isAuth, userControllers.join.get)
 router.get('/logout', userControllers.logout)
 router.get('/new', isAuth, postControllers.create.get)
+router.get('/delete-post/:id', isAdmin, postControllers.delete)
 
 module.exports = router;
