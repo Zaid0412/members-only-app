@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Become a Member!</title>
+</head>
+<body>
+    <%- include ('partials/header') %>
+    <table class="users-list">
+        <tr class="headers">
+            <th>ID</th>
+            <th>Fullname</th>
+            <th>Username</th>
+            <th>Posts Created</th>
+            <th>Membership</th>
+            <th>Admin</th>
+        </tr>
+        <% users && users.map(user => { %>
+            <tr>
+               <td><%= user.id %></td>
+               <td><%= user.fullname %></td>
+               <td><%= user.username %></td>
+               <td><%= user.createdPosts %></td>
+               <td><%= user.member  %></td>
+               <td><%= user.admin  %></td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

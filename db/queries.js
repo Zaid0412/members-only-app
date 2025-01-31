@@ -23,6 +23,11 @@ const queries = {
         return rows
     },
 
+    getPostsFromUserID: async (user_id) => {
+        const { rows } = await pool.query(`SELECT * FROM posts WHERE user_id = $1`, [user_id])
+        return rows
+    },
+
     createPost: async (title, content, user_id) => {
         queries.getMaxPostId().then(async maxId => {
             await pool.query(`INSERT INTO posts (id, title, content, user_id) VALUES ($1, $2, $3, $4)`, [maxId.max + 1, title, content, user_id])
