@@ -602,3 +602,26 @@ body{
     -webkit-line-clamp: 1;
     line-clamp: 1;
 }
+
+ /* Error Page  */
+
+.error-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+}
+
+.error-page h1 em{
+    color: var(--red);
+    opacity: 0.8;
+}
+
+.error-page a{
+    color: var(--blue);
+}
+
+.error-page a:hover{
+    text-decoration: none;
+}
