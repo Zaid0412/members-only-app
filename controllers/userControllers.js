@@ -47,6 +47,7 @@ const usersControllers = {
             res.render('join', { user: req.user || null})
         },
         post: async (req, res, next) => {
+            console.log(req.body.code)
             try {
                 if (req.body.code == process.env.CODE) {
                     await db.giveUserMembership(req.user.id)
