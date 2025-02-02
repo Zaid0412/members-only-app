@@ -604,6 +604,14 @@ body{
     line-clamp: 1;
 }
 
+.users-list tr td.inActive{
+    color: var(--red);
+}
+
+.users-list tr td.active{
+    color: green;
+}
+
  /* Error Page  */
 
 .error-page{
