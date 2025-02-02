@@ -2,7 +2,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const { validationResult } = require('express-validator');
 const passport = require('passport');
 const db = require('../db/queries');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 require('dotenv').config()
 
 const usersControllers = {
