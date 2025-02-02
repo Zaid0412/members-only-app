@@ -22,31 +22,31 @@ const indexControllers = {
     },
 
     members: async (req, res, next) => {
-        try {
-            const users = await db.getAllUsers(); // Wait for all users
-    
-            if (users.length > 0) {
-                // Wait for all users' posts using Promise.all
-                const formattedUsers = await Promise.all(
-                    users.map(async user => {
-                        const posts = await db.getPostsFromUserID(user.id); // Get posts for each user
-                        return {
-                            ...user,
-                            createdPosts: posts.length // Store post count
-                        };
-                    })
-                );
-    
-                console.log(formattedUsers); // Now properly resolved
-                res.render('users', { user: req.user || null, users: formattedUsers });
-            } else {
-                res.render('users', { user: req.user || null, users: [] });
-            }
-        } catch (error) {
-            next(error);
+    try {
+        const users = await db.getAllUsers(); // Wait for all users
+
+        if (users.length > 0) {
+            // Wait for all users' posts using Promise.all
+            const formattedUsers = await Promise.all(
+                users.map(async user => {
+                    const posts = await db.getPostsFromUserID(user.id); // Get posts for each user
+                    return {
+                        ...user,
+                        createdPosts: posts.length // Store post count
+                    };
+                })
+            );
+
+            console.log(formattedUsers); // Now properly resolved
+            res.render('users', { user: req.user || null, users: formattedUsers });
+        } else {
+            res.render('users', { user: req.user || null, users: [] });
         }
+    } catch (error) {
+        next(error);
     }
-    
+}
+
 }
 
 module.exports = indexControllers;

@@ -582,6 +582,7 @@ body{
     display: grid;   
     text-align: center;
     grid-template-columns: repeat(6, 1fr);  
+    padding-top: 0.75em;
 }
 
 .users-list tr.headers{
