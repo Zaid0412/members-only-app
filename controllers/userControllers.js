@@ -50,8 +50,9 @@ const usersControllers = {
             console.log(req.body.code)
             try {
                 if (req.body.code == process.env.CODE) {
-                    await db.giveUserMembership(req.user.id)
-                    return res.redirect('/')
+                    db.giveUserMembership(req.user.id).then(e => {
+                        return res.redirect('/')
+                    })
                 }else {
                     return res.redirect('/join')
                 }
