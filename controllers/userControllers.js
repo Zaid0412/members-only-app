@@ -44,7 +44,7 @@ const usersControllers = {
 
     join: {
         get: (req, res) => {
-            res.render('join', { user: req.user || null})
+            return res.render('join', { user: req.user || null})
         },
         post: async (req, res, next) => {
             console.log(req.body.code)
