@@ -30,7 +30,7 @@ const queries = {
 
     createPost: async (title, content, user_id) => {
         queries.getMaxPostId().then(async maxId => {
-            await pool.query(`INSERT INTO posts (id, title, content, user_id) VALUES ($1, $2, $3, $4)`, [maxId.max + 1, title, content, user_id])
+            await pool.query(`INSERT INTO posts (id, title, content, date, user_id) VALUES ($1, $2, $3, $4, $5)`, [maxId.max + 1, title, content, new Date(), user_id])
         })
     },
 
