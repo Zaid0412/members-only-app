@@ -12,6 +12,7 @@ const indexControllers = {
                             formattedDate: moment(post.date).fromNow(),
                         }
                     });
+                    formattedPosts.reverse() // Reverse the Array (Posts) to show the newest ones first
                     res.render('index', { posts: formattedPosts, user: req.user || null})
                 }
                 res.render('index', { posts: posts , user: req.user || null})
