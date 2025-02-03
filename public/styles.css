@@ -1,78 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
-*{
-    font-family: "Josefin Sans", serif;
-    color: var(--black);
+* {
+  font-family: 'Josefin Sans', serif;
+  color: var(--black);
 }
 
-:root{
-    --white: #FFFFFF;
-    --lavender: #DDEEFC;
-    --blue: #2364D2;
-    --red: #FE0000;
-    --black: #24292E;
+:root {
+  --white: #ffffff;
+  --lavender: #ddeefc;
+  --blue: #2364d2;
+  --red: #fe0000;
+  --black: #24292e;
 }
 
-body{
-    margin: 0;
-    padding: 0;
-    background-color: var(--lavender);
-    display: grid;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--lavender);
+  display: grid;
 }
 
- /* Header */
-.header{
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    padding: 7px 15px 7px 15px;
+/* Header */
+.header {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 7px 15px 7px 15px;
 }
 
-.header a:has(h1){
-    text-decoration: none;
+.header a:has(h1) {
+  text-decoration: none;
 }
 
-.header a h1{
-    transition: all 0.15s ease;
+.header a h1 {
+  transition: all 0.15s ease;
 }
 
-.header a:has(h1) h1:hover{
-    color: #3a3e43;
+.header a:has(h1) h1:hover {
+  color: #3a3e43;
 }
 
-
-.header button{
-    background-color: var(--blue);
-    color: var(--white);
-    border: 2px solid var(--blue);
-    padding: 10px 20px 10px 20px;
-    border-radius: 3px;
-    transition: all 0.2s ease-in-out;
-    font-size: 1em;
-    cursor: pointer;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+.header button {
+  background-color: var(--blue);
+  color: var(--white);
+  border: 2px solid var(--blue);
+  padding: 10px 20px 10px 20px;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.header .login-btn{
-    margin-left: auto;
-    margin-right: 1em;
+.header .login-btn {
+  margin-left: auto;
+  margin-right: 1em;
 }
 
-.header .login-btn button:hover{
-    background-color: var(--white);
-    color: var(--blue);
+.header .login-btn button:hover {
+  background-color: var(--white);
+  color: var(--blue);
 }
 
-.header .register-btn button:hover{
-    background-color: #3974d7;
+.header .register-btn button:hover {
+  background-color: #3974d7;
 }
 
 .header .login-btn button:active,
-.header .register-btn button:active{
-    transform: scale(0.95);
+.header .register-btn button:active {
+  transform: scale(0.95);
 }
 
-/* From Uiverse.io by aadium */ 
+/* From Uiverse.io by aadium */
 .paste-button {
   position: relative;
   display: block;
@@ -81,7 +80,7 @@ body{
 }
 
 .button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: var(--lavender);
   padding: 10px 15px;
   font-size: 15px;
@@ -104,7 +103,7 @@ body{
   background-color: var(--lavender);
   border: 2px solid var(--blue);
   border-radius: 0px 15px 15px 15px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content a {
@@ -116,8 +115,8 @@ body{
 }
 
 .dropdown-content a:hover {
-    background-color: var(--blue);
-    color: var(--lavender);
+  background-color: var(--blue);
+  color: var(--lavender);
 }
 
 .dropdown-content a:focus {
@@ -139,498 +138,536 @@ body{
 }
 
 @keyframes fade {
-    0%{
-        opacity: 0;
-        filter: blur(2.5px);
-    }
-    100%{
-        opacity: 1;
-        filter: blur(0px);
-    }
-}
-.err-msg{
-    margin: 0;
-    font-size: 0.75em;
-    color: var(--red);
-    /* text-align: start; */
-    align-self: flex-start !important;
-}
-
- /* Login Form */
-.login-form{
-    background-color: var(--white);
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    width: 30vw;
-    justify-self: center;
-    margin-top: 12vh;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.login-form h1{
-    align-self: center;
-}
-
-.login-form div{
-    display: flex;
-    flex-direction: column;
-    gap: .3em;
-}
-
-.login-form input{
-    border: 1px solid #ced6e0;
-    border-radius: 7px;
-    padding: 15px;
-    width: 93%;
-    transition: all .3s ease-in-out;
-}
-
-.login-form label{
-    font-size: 0.8em;
-}
-
-.login-form button{
-    background-color: var(--blue);
-    color: var(--white);
-    border: 2px solid var(--blue);
-    padding: 10px 20px 10px 20px;
-    border-radius: 3px;
-    transition: all 0.3s ease-in-out;
-    font-size: 1em;
-    cursor: pointer;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-.login-form p{
-    align-self: center;
-}
-
-.login-form p a{
-    color: var(--blue);
-    text-decoration: none;
-    transition: all 0.15s ease-in-out;
-}
-
-.login-form p a:hover{
-    text-decoration: underline;
-}
-
-.login-form button:hover{
-    background-color: #3974d7;
-}
-
-.login-form button:active{
-    transform: scale(0.975);
-}
-
-.login-form input:hover{
-    border: 1px solid var(--blue);
-}
-
-.login-form input:focus{
-    border: 1px solid var(--blue);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    outline: none;
-}
-
- /* Register Form */
-
-
- /* Login Form */
- .register-form{
-    background-color: var(--white);
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    width: 30vw;
-    justify-self: center;
-    margin-top: -2vh;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.register-form h1{
-    align-self: center;
-}
-
-.register-form div{
-    display: flex;
-    flex-direction: column;
-    gap: .3em;
-}
-
-.register-form input{
-    border: 1px solid #ced6e0;
-    border-radius: 7px;
-    padding: 15px;
-    width: 93%;
-    transition: all .3s ease-in-out;
-}
-
-.register-form label{
-    font-size: 0.8em;
-}
-
-.register-form button{
-    background-color: var(--blue);
-    color: var(--white);
-    border: 2px solid var(--blue);
-    padding: 10px 20px 10px 20px;
-    border-radius: 3px;
-    transition: all 0.3s ease-in-out;
-    font-size: 1em;
-    cursor: pointer;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-
-.register-form p{
-    align-self: center;
-}
-
-.register-form p a{
-    color: var(--blue);
-    text-decoration: none;
-    transition: all 0.15s ease-in-out;
-}
-
-.register-form p a:hover{
-    text-decoration: underline;
-}
-
-.register-form button:hover{
-    background-color: #3974d7;
-}
-
-.register-form button:active{
-    transform: scale(0.975);
-}
-
-.register-form input:hover{
-    border: 1px solid var(--blue);
-}
-
-.register-form input:focus{
-    border: 1px solid var(--blue);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    outline: none;
-}
-
- /* Membership Form  */
-
- .member-form{
-    background-color: var(--white);
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    width: 30vw;
-    justify-self: center;
-    margin-top: 12vh;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.member-form h1{
-    align-self: center;
-}
-
-.member-form div{
-    display: flex;
-    flex-direction: column;
-    gap: .3em;
-}
-
-.member-form input{
-    border: 1px solid #ced6e0;
-    border-radius: 7px;
-    padding: 15px;
-    width: 93%;
-    transition: all .3s ease-in-out;
-}
-
-.member-form label{
-    font-size: 0.8em;
-}
-
-.member-form button{
-    background-color: var(--blue);
-    color: var(--white);
-    border: 2px solid var(--blue);
-    padding: 10px 20px 10px 20px;
-    border-radius: 3px;
-    transition: all 0.3s ease-in-out;
-    font-size: 1em;
-    cursor: pointer;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-.member-form p{
-    align-self: center;
-}
-
-.member-form p a{
-    color: var(--blue);
-    text-decoration: none;
-    transition: all 0.15s ease-in-out;
-}
-
-.member-form p a:hover{
-    text-decoration: underline;
-}
-
-.member-form button:hover{
-    background-color: #3974d7;
-}
-
-.member-form button:active{
-    transform: scale(0.975);
-}
-
-.member-form input:hover{
-    border: 1px solid var(--blue);
-}
-
-.member-form input:focus{
-    border: 1px solid var(--blue);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    outline: none;
-}
-
- /* Posts  */
-
-.posts{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5em;
-}
-
-.posts .post{
-    /* border: 1px solid var(--white); */
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    border-radius: 9px;
-    padding: 1em;
-    width: 40vw;
-
-    display: flex;
-    flex-direction: column;
-    gap: 0.75em;
-}
-
-.post .post-heading{
-    display: flex;
-    gap: 0.6em;
-}
-
-.post svg{
-    margin-top: -0.25em;
-}
-
-.post .post-fullname{
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.post .post-username{
-    opacity: 0.8;
-    letter-spacing: 0.5px;
-}
-
-.post a{
-    margin-left: auto;
-    align-self: flex-end;
-    cursor: pointer;
+  0% {
     opacity: 0;
-    transition: all 0.15s ease-in-out;
-    will-change: transform;
-}
-
-.post a:active{
-    transform: scale(0.925);
-}
-
-.post:hover a{
+    filter: blur(2.5px);
+  }
+  100% {
     opacity: 1;
+    filter: blur(0px);
+  }
+}
+.err-msg {
+  margin: 0;
+  font-size: 0.75em;
+  color: var(--red);
+  /* text-align: start; */
+  align-self: flex-start !important;
+}
+
+/* Login Form */
+.login-form {
+  background-color: var(--white);
+  box-shadow:
+    rgba(0, 0, 0, 0.07) 0px 1px 2px,
+    rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px,
+    rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px,
+    rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  width: 30vw;
+  justify-self: center;
+  margin-top: 12vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.login-form h1 {
+  align-self: center;
+}
+
+.login-form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.login-form input {
+  border: 1px solid #ced6e0;
+  border-radius: 7px;
+  padding: 15px;
+  width: 93%;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-form label {
+  font-size: 0.8em;
+}
+
+.login-form button {
+  background-color: var(--blue);
+  color: var(--white);
+  border: 2px solid var(--blue);
+  padding: 10px 20px 10px 20px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.login-form p {
+  align-self: center;
+}
+
+.login-form p a {
+  color: var(--blue);
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.login-form p a:hover {
+  text-decoration: underline;
+}
+
+.login-form button:hover {
+  background-color: #3974d7;
+}
+
+.login-form button:active {
+  transform: scale(0.975);
+}
+
+.login-form input:hover {
+  border: 1px solid var(--blue);
+}
+
+.login-form input:focus {
+  border: 1px solid var(--blue);
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  outline: none;
+}
+
+/* Register Form */
+
+/* Login Form */
+.register-form {
+  background-color: var(--white);
+  box-shadow:
+    rgba(0, 0, 0, 0.07) 0px 1px 2px,
+    rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px,
+    rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px,
+    rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  width: 30vw;
+  justify-self: center;
+  margin-top: -2vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.register-form h1 {
+  align-self: center;
+}
+
+.register-form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.register-form input {
+  border: 1px solid #ced6e0;
+  border-radius: 7px;
+  padding: 15px;
+  width: 93%;
+  transition: all 0.3s ease-in-out;
+}
+
+.register-form label {
+  font-size: 0.8em;
+}
+
+.register-form button {
+  background-color: var(--blue);
+  color: var(--white);
+  border: 2px solid var(--blue);
+  padding: 10px 20px 10px 20px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.register-form p {
+  align-self: center;
+}
+
+.register-form p a {
+  color: var(--blue);
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.register-form p a:hover {
+  text-decoration: underline;
+}
+
+.register-form button:hover {
+  background-color: #3974d7;
+}
+
+.register-form button:active {
+  transform: scale(0.975);
+}
+
+.register-form input:hover {
+  border: 1px solid var(--blue);
+}
+
+.register-form input:focus {
+  border: 1px solid var(--blue);
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  outline: none;
+}
+
+/* Membership Form  */
+
+.member-form {
+  background-color: var(--white);
+  box-shadow:
+    rgba(0, 0, 0, 0.07) 0px 1px 2px,
+    rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px,
+    rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px,
+    rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  width: 30vw;
+  justify-self: center;
+  margin-top: 12vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.member-form h1 {
+  align-self: center;
+}
+
+.member-form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.member-form input {
+  border: 1px solid #ced6e0;
+  border-radius: 7px;
+  padding: 15px;
+  width: 93%;
+  transition: all 0.3s ease-in-out;
+}
+
+.member-form label {
+  font-size: 0.8em;
+}
+
+.member-form button {
+  background-color: var(--blue);
+  color: var(--white);
+  border: 2px solid var(--blue);
+  padding: 10px 20px 10px 20px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.member-form p {
+  align-self: center;
+}
+
+.member-form p a {
+  color: var(--blue);
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.member-form p a:hover {
+  text-decoration: underline;
+}
+
+.member-form button:hover {
+  background-color: #3974d7;
+}
+
+.member-form button:active {
+  transform: scale(0.975);
+}
+
+.member-form input:hover {
+  border: 1px solid var(--blue);
+}
+
+.member-form input:focus {
+  border: 1px solid var(--blue);
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  outline: none;
+}
+
+/* Posts  */
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.posts .post {
+  /* border: 1px solid var(--white); */
+  box-shadow:
+    rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 9px;
+  padding: 1em;
+  width: 40vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.post .post-heading {
+  display: flex;
+  gap: 0.6em;
+}
+
+.post svg {
+  margin-top: -0.25em;
+}
+
+.post .post-fullname {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.post .post-username {
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+}
+
+.post a {
+  margin-left: auto;
+  align-self: flex-end;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+  will-change: transform;
+}
+
+.post a:active {
+  transform: scale(0.925);
+}
+
+.post:hover a {
+  opacity: 1;
 }
 
 /* * */
-.post .post-main{
-    display: flex;
-    flex-direction: column;
-    padding-left: 2em;
+.post .post-main {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2em;
 }
 
-.post .post-title{
-    font-size: 1.2em;
-    margin-bottom: 0.5em;
+.post .post-title {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
 }
 
-.post .post-content{
-    margin-top: 0;
+.post .post-content {
+  margin-top: 0;
 }
 
- /* Posts Form */
+/* Posts Form */
 
- .post-form{
-    background-color: var(--white);
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    width: 30vw;
-    justify-self: center;
-    margin-top: 5vh;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    padding: 20px;
-    border-radius: 10px;
+.post-form {
+  background-color: var(--white);
+  box-shadow:
+    rgba(0, 0, 0, 0.07) 0px 1px 2px,
+    rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px,
+    rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px,
+    rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  width: 30vw;
+  justify-self: center;
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.post-form h1{
-    align-self: center;
+.post-form h1 {
+  align-self: center;
 }
 
-.post-form div{
-    display: flex;
-    flex-direction: column;
-    gap: .3em;
+.post-form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
 }
 
-.post-form input,   
-.post-form textarea{
-    border: 1px solid #ced6e0;
-    border-radius: 7px;
-    padding: 15px;
-    width: 93%;
-    transition: all .3s ease-in-out;
+.post-form input,
+.post-form textarea {
+  border: 1px solid #ced6e0;
+  border-radius: 7px;
+  padding: 15px;
+  width: 93%;
+  transition: all 0.3s ease-in-out;
 }
 
-.post-form textarea{
-    resize: none;
+.post-form textarea {
+  resize: none;
 }
 
-.post-form label{
-    font-size: 0.8em;
+.post-form label {
+  font-size: 0.8em;
 }
 
-.post-form button{
-    background-color: var(--blue);
-    color: var(--white);
-    border: 2px solid var(--blue);
-    padding: 10px 20px 10px 20px;
-    border-radius: 3px;
-    transition: all 0.3s ease-in-out;
-    font-size: 1em;
-    cursor: pointer;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+.post-form button {
+  background-color: var(--blue);
+  color: var(--white);
+  border: 2px solid var(--blue);
+  padding: 10px 20px 10px 20px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.post-form p{
-    align-self: center;
+.post-form p {
+  align-self: center;
 }
 
-.post-form p a{
-    color: var(--blue);
-    text-decoration: none;
-    transition: all 0.15s ease-in-out;
+.post-form p a {
+  color: var(--blue);
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
 }
 
-.post-form p a:hover{
-    text-decoration: underline;
+.post-form p a:hover {
+  text-decoration: underline;
 }
 
-.post-form button:hover{
-    background-color: #3974d7;
+.post-form button:hover {
+  background-color: #3974d7;
 }
 
-.post-form button:active{
-    transform: scale(0.975);
+.post-form button:active {
+  transform: scale(0.975);
 }
 
 .post-form input:hover,
-.post-form textarea:hover{
-    border: 1px solid var(--blue);
+.post-form textarea:hover {
+  border: 1px solid var(--blue);
 }
 
 .post-form input:focus,
-.post-form textarea:focus{
-    border: 1px solid var(--blue);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    outline: none;
+.post-form textarea:focus {
+  border: 1px solid var(--blue);
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  outline: none;
 }
 
- /* Members Record */
- 
-.users-list{
-    background-color: var(--white);
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    width: 60vw;
-    justify-self: center;
-    margin-top: 5vh;
-    display: grid;
-    gap: 3em;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-} 
+/* Members Record */
 
-.users-list tr{
-    display: grid;   
-    text-align: center;
-    grid-template-columns: repeat(6, 1fr);  
-    padding-top: 0.75em;
+.users-list {
+  background-color: var(--white);
+  box-shadow:
+    rgba(0, 0, 0, 0.07) 0px 1px 2px,
+    rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px,
+    rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px,
+    rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  width: 60vw;
+  justify-self: center;
+  margin-top: 5vh;
+  display: grid;
+  gap: 3em;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
 
-.users-list tr.headers{
-    border-bottom: 2px solid var(--black);
-    padding-bottom: 0.25em;
+.users-list tr {
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(6, 1fr);
+  padding-top: 0.75em;
 }
 
-.users-list tr:nth-of-type(2){
-    padding-top: 0.5em;
+.users-list tr.headers {
+  border-bottom: 2px solid var(--black);
+  padding-bottom: 0.25em;
 }
 
-.users-list tr td{
-    flex-grow: 1;
-    text-align: center;
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    line-clamp: 1;
+.users-list tr:nth-of-type(2) {
+  padding-top: 0.5em;
 }
 
-.users-list tr td.inActive{
-    color: var(--red);
+.users-list tr td {
+  flex-grow: 1;
+  text-align: center;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
 }
 
-.users-list tr td.active{
-    color: green;
+.users-list tr td.inActive {
+  color: var(--red);
 }
 
- /* Error Page  */
-
-.error-page{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20vh;
+.users-list tr td.active {
+  color: green;
 }
 
-.error-page h1 em{
-    color: var(--red);
-    opacity: 0.8;
+/* Error Page  */
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
 }
 
-.error-page a{
-    color: var(--blue);
+.error-page h1 em {
+  color: var(--red);
+  opacity: 0.8;
 }
 
-.error-page a:hover{
-    text-decoration: none;
+.error-page a {
+  color: var(--blue);
+}
+
+.error-page a:hover {
+  text-decoration: none;
 }

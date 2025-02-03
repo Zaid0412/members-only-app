@@ -1,7 +1,8 @@
-const { Pool } = require('pg')
-require('dotenv').config()
+const { Pool } = require('pg');
+require('dotenv').config();
 
-const connectionString = 'postgresql://postgres:tQmcZDIIiUWpSVqWWhJTSxSfvNDRyqVe@viaduct.proxy.rlwy.net:31127/railway'
+const connectionString =
+  'postgresql://postgres:tQmcZDIIiUWpSVqWWhJTSxSfvNDRyqVe@viaduct.proxy.rlwy.net:31127/railway';
 
 // module.exports = new Pool({
 //     host:process.env.HOST,
@@ -12,5 +13,5 @@ const connectionString = 'postgresql://postgres:tQmcZDIIiUWpSVqWWhJTSxSfvNDRyqVe
 // })
 
 module.exports = new Pool({
-    connectionString,
+  connectionString,
 });
